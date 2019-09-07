@@ -4,13 +4,20 @@ h2{
 }
 #nCard{
     border: 2px solid black;
-    margin-left: 15em;
-    margin-right: 15em;
+    margin-left: 10em;
+    margin-right: 10em;
     margin-bottom: 2em;
     margin-top: 1em;
+    background-color: lightskyblue;
 }
 #more{
     padding: 1em;
     margin-bottom: 1em;
     font-size: large;
+}
+button{
+    padding: 5px;
+    margin: 5px;
+    background-color: burlywood;
+    font-weight: bold;
 }

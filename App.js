@@ -1,28 +1,40 @@
 import React from 'react';
 import './App.css';
-import Ex2_2 from './Ex2_2'
-import Ex2_3 from './Ex2_3'
-import Ex2_4 from './Ex2_4'
-import Ex3_1 from './Ex3_1'
-import Ex5_1 from './Ex5_1'
-import Ex5_2 from './Ex5_2'
-import Ex5_3Persons from './Ex5_3Persons'
-import Ex5_3Person from './Ex5_3Person'
-import Parent from './Parent'
+import NameTag from './NameTag';
+import TPboard from './TPboard';
 import Journal from './Journal';
 import TaskTag from './TaskTag';
 import TaskBoard from './TaskBoard';
+import PostBoard from './PostBoard';
+import {BrowserRouter as Router,Switch,Route,Link,withRouter} from 'react-router-dom';
 
 
-function App() {
-  return (
-    <div className="App">
+class App extends React.Component {
+  constructor(props){
+    super(props);
+    
+  }
+  render(){
+
+
+    return (
+      <Router>
+          <div className="App">
+                  
+                <Switch>
+                    <Route path='/' exact component={Journal}/>
+                    <Route path='/TPboard'  component={withRouter(TPboard)}/>
+                    <Route path='/Taskboard'  component={TaskBoard}/>
+                    <Route path='/Postboard'  component={PostBoard}/>
+
+                </Switch>
+               
+          </div>
+      </Router>
       
-      <Journal />
-      <TaskTag/>
-      <TaskBoard />
-    </div>
-  );
+    );
+  }
+  
 }
 
 export default App;

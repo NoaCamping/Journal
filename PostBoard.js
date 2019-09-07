@@ -1,11 +1,11 @@
 import React from 'react';
-import TaskTag from './TaskTag';
+import PostTag from './PostTag';
 import axios from 'axios';
-import './TaskBoard.css';
+import './PostBoard.css';
 
 
 
-class TaskBoard extends React.Component {
+class PostBoard extends React.Component {
     constructor(props){
         super(props);
 
@@ -15,13 +15,13 @@ class TaskBoard extends React.Component {
     componentDidMount=(props)=>{
       this.setState=({"id": this.props.id});
    }
-   
+
     render(){
         return (
-            <div id="taskboard">
-              <h2>Tasks for client number {this.state.id}</h2>
-              <TaskTag />
-              <TaskTag/>
+            <div id="postboard">
+              <h2>Posts for client number {this.state.id}</h2>
+              <PostTag />
+              <PostTag/>
               
             </div>
           );
@@ -29,4 +29,4 @@ class TaskBoard extends React.Component {
   
 }
 
-export default TaskBoard;
+export default PostBoard;

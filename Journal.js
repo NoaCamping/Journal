@@ -1,28 +1,35 @@
 import React from 'react';
 import NameTag from './NameTag';
 import axios from 'axios';
-
-/*componentDidMount(){
-    axios.get('https://jsonplaceholder.typicode.com/users')
-    .then(response=>{
-        this.setState({item:{name: response.data.name, email: response.data.email}});
-    });
-}*/
+import {BrowserRouter,Route,Switch} from "react-router-dom";
+import TaskBoard from './TaskBoard';
+import PostBoard from './PostBoard';
 
 class Journal extends React.Component {
     constructor(props){
         super(props);
 
-        this.state={item: {"name":"", "email":""}};
+        this.state={"persons": []};
     }
+
+
+    componentDidMount(){
+        axios.get('https://jsonplaceholder.typicode.com/users')
+        .then(response=>{
+            const people=response.data;
+            this.setState({persons: people});
+        })
+    }
+    
+
     render(){
         return (
-            <div className="App">
-              
-              <NameTag name="Dan" email="d@gmail.com"/>
-              <NameTag/>
-              
-            </div>
+                    <div>
+                        {this.state.persons.map(person=>
+                        <NameTag id={person.id}
+                        name={person.name} email={person.email} key={person.id}/>)}
+                       
+                    </div>
           );
     }
   
