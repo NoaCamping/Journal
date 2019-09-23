@@ -15,12 +15,11 @@ class NameTag extends React.Component{
 
     componentDidMount=(props)=>{
         this.setState({id: this.props.id,name: this.props.name, email: this.props.email});
+        
     }
    
 
-    render(){
-       
-        
+    render(){       
        
         return(
                 <Switch>
@@ -30,7 +29,13 @@ class NameTag extends React.Component{
                         <h2><u>Email:  </u> &nbsp; {this.state.email}</h2>
                         
                     <button>
-                            <Link to={'/TPboard/${this.state.id}'} component={TPboard} >Tasks Posts Board</Link>     
+                            <Link to={{
+                                pathname:'/TPboard/${this.state.id}',
+                                state: {id: this.state.id
+                                }
+                                }} component={TPboard} >
+                                Tasks Posts Board
+                            </Link>     
                     </button>
                    
                     </div>    

@@ -27,7 +27,7 @@ class Journal extends React.Component {
                     <div>
                         {this.state.persons.map(person=>
                         <NameTag id={person.id}
-                        name={person.name} email={person.email} key={person.id}/>)}
+                        name={person.name} email={person.email} />)}
                        
                     </div>
           );

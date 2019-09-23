@@ -23,9 +23,9 @@ class App extends React.Component {
                   
                 <Switch>
                     <Route path='/' exact component={Journal}/>
-                    <Route path='/TPboard'  component={withRouter(TPboard)}/>
-                    <Route path='/Taskboard'  component={TaskBoard}/>
-                    <Route path='/Postboard'  component={PostBoard}/>
+                    <Route path='/TPboard/:id'  component={TPboard}/>
+                    <Route path='/Taskboard/'  component={TaskBoard}/>
+                    <Route path='/Postboard/'  component={PostBoard}/>
 
                 </Switch>
                

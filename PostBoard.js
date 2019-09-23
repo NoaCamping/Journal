@@ -9,19 +9,26 @@ class PostBoard extends React.Component {
     constructor(props){
         super(props);
 
-        this.state={"id": "0"};
+        this.state={"id": this.props.location.state.id, "myposts":[]};
     }
 
-    componentDidMount=(props)=>{
-      this.setState=({"id": this.props.id});
-   }
+    componentDidMount=async()=>{
+      await axios.get('https://jsonplaceholder.typicode.com/posts/?userId={this.state.id}')
+      .then(response=>{
+          const posts=response.data;
+          this.setState({myposts: posts});
+      })
+  }
 
     render(){
         return (
             <div id="postboard">
               <h2>Posts for client number {this.state.id}</h2>
-              <PostTag />
-              <PostTag/>
+              {this.state.myposts.map(post=>
+                    <PostTag id={this.state.id} title={post.title} body={post.body}/>    
+                      )}
+              
+              
               
             </div>
           );
