@@ -29,11 +29,8 @@ class TPboard extends React.Component {
                     
                         <Link to={{
                             pathname: `/PostBoard/${this.state.id}`,
-                            state:{
-                                id: this.state.id,
-                                funny: true
-                                }
-                            }} component={PostBoard}>
+                            state:{id: this.state.id}
+                            }} >
                             Post Board
                         </Link>
                     
@@ -42,10 +39,8 @@ class TPboard extends React.Component {
                     
                         <Link to={{
                             pathname: `/TaskBoard/${this.state.id}`,
-                            state:{
-                                id: this.state.id
-                            }
-                            }} component={TaskBoard}>
+                            state:{id: this.state.id}
+                            }} >
                             Task Board
                             </Link>
                     
