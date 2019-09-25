@@ -12,21 +12,27 @@ class TaskBoard extends React.Component {
         this.state={"id":  this.props.location.state.id, "mytasks": []};
     }
 
-    componentDidMount=async()=>{
-      await axios.get(`https://jsonplaceholder.typicode.com/todos/?userId={this.state.id}`)
+    componentDidMount=()=>{
+      axios.get(`https://jsonplaceholder.typicode.com/todos/?userId={this.state.id}`)
       .then(response=>{
           const tasks=response.data;
           this.setState({mytasks: tasks});
-      })
+          console.log(this.state.mytasks);
+      });
   }
 
     render(){
         return (
             <div id="taskboard">
               <h2>Tasks for client number {this.state.id}</h2>
-              {this.state.mytasks.map(task=>
-                    <TaskTag id={this.state.id} title={task.title} body={task.body}/>    
+              <ul>
+              {this.state.mytasks.map((task,index)=>
+                    <li  key={index}>
+                      <TaskTag id={this.state.id} title={task.title} body={task.body}/>  
+                    </li>  
                       )}
+              </ul>
+             
               
             </div>
           );
