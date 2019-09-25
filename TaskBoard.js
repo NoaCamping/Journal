@@ -12,12 +12,12 @@ class TaskBoard extends React.Component {
         this.state={"id":  this.props.location.state.id, "mytasks": []};
     }
 
-    componentDidMount=()=>{
+    componentDidMount(){
       axios.get(`https://jsonplaceholder.typicode.com/todos/?userId={this.state.id}`)
       .then(response=>{
           const tasks=response.data;
           this.setState({mytasks: tasks});
-          console.log(this.state.mytasks);
+          
       });
   }
 

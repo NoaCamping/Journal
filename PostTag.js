@@ -1,6 +1,5 @@
 import React from 'react';
 import  './PostTag.css';
-import axios from 'axios';
 
 class PostTag extends React.Component{
   
@@ -16,7 +15,7 @@ class PostTag extends React.Component{
     render(){       
        
         return(
-           <div id="pCard">
+           <div id="pcard">
                <h2><u>Title: </u> &nbsp; {this.state.title}</h2>
                 <h2><u>Message: </u> &nbsp; {this.state.body}</h2>
                    

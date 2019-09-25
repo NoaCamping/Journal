@@ -1,7 +1,7 @@
 import React from 'react';
 import  './NameTag.css';
-import {BrowserRouter as Router,Switch,Route,Link} from 'react-router-dom';
-import TPboard from './TPboard';
+import {Link} from 'react-router-dom';
+//import TPboard from './TPboard';
 
 class NameTag extends React.Component{
   
@@ -11,33 +11,32 @@ class NameTag extends React.Component{
        this.state={"id":"0","name": "", "email": ""} 
     }
 
-    componentDidMount=(props)=>{
+    componentDidMount(props){
         this.setState({id: this.props.id,name: this.props.name, email: this.props.email});
         
     }
    
 
-    render(){       
-       
+    render(){        
         return(
-                <Switch>
-                    <div id="nCard">
-                        <h2><u> Id number: </u> &nbsp; {this.state.id}</h2>
-                        <h2><u>Name:  </u> &nbsp; {this.state.name}</h2>
-                        <h2><u>Email:  </u> &nbsp; {this.state.email}</h2>
+                    <div className="ncard">
+                            <h2><u> Id number: </u> &nbsp; {this.state.id}</h2>
+                            <h2><u>Name:  </u> &nbsp; {this.state.name}</h2>
+                            <h2><u>Email:  </u> &nbsp; {this.state.email}</h2>
                         
-                    <button>
-                            <Link to={{
+                        
+                            <Link  
+                            to={{
                                 pathname:`/TPboard/${this.state.id}`,
-                                state: {id: this.state.id
-                                }
-                                }} component={TPboard} >
+                                state: {id: this.state.id}
+                            }}
+                            >
                                 Tasks Posts Board
-                            </Link>     
-                    </button>
+                            </Link>  
+                        
                    
                     </div>    
-                </Switch>
+                
             
            
            

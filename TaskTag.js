@@ -14,9 +14,9 @@ class TaskTag extends React.Component{
     render(){
        
         return(
-           <div id="tCard">
-               <h2>Title: &nbsp; {this.state.title}</h2>     
-                <h2>Completed: &nbsp; {this.state.completed}</h2>
+           <div id="tcard">
+               <h2>Title: {this.state.title}</h2>     
+                <h2>Completed: {this.state.completed}</h2>
            </div>
            
         );

@@ -2,7 +2,7 @@ h2{
     text-align:left;
     padding-left: 1em;
 }
-#nCard{
+.ncard{
     border: 2px solid black;
     margin-left: 10em;
     margin-right: 10em;

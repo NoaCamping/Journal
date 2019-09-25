@@ -1,31 +1,26 @@
 import React from 'react';
 import './App.css';
-import NameTag from './NameTag';
 import TPboard from './TPboard';
 import Journal from './Journal';
-import TaskTag from './TaskTag';
 import TaskBoard from './TaskBoard';
 import PostBoard from './PostBoard';
-import {BrowserRouter as Router,Switch,Route,Link,withRouter} from 'react-router-dom';
+import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
 
 
 class App extends React.Component {
-  constructor(props){
-    super(props);
-    
-  }
+ 
   render(){
 
 
     return (
       <Router>
           <div className="App">
-                  
+               <h1>Tasks-Posts Management</h1>   
                 <Switch>
                     <Route path='/' exact component={Journal}/>
                     <Route path='/TPboard/:id'  component={TPboard}/>
-                    <Route path='/Taskboard/'  component={TaskBoard}/>
-                    <Route path='/Postboard/'  component={PostBoard}/>
+                    <Route path='/Taskboard/:id'  component={TaskBoard}/>
+                    <Route path='/Postboard/:id'  component={PostBoard}/>
 
                 </Switch>
                

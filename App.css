@@ -1,5 +1,14 @@
+body{
+  background-color: rosybrown;
+}
 .App {
   text-align: center;
+}
+h1{
+  background-color: gold;
+  border-radius: 100px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 

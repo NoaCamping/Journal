@@ -1,9 +1,7 @@
 import React from 'react';
 import NameTag from './NameTag';
 import axios from 'axios';
-import {BrowserRouter,Route,Switch} from "react-router-dom";
-import TaskBoard from './TaskBoard';
-import PostBoard from './PostBoard';
+
 
 class Journal extends React.Component {
     constructor(props){
@@ -25,9 +23,13 @@ class Journal extends React.Component {
     render(){
         return (
                     <div>
-                        {this.state.persons.map(person=>
-                        <NameTag id={person.id}
-                        name={person.name} email={person.email} />)}
+                        {this.state.persons.map((person,index)=>
+                        
+                                 <NameTag id={person.id}
+                                    name={person.name} email={person.email} key={index}
+                                />
+                        
+                       )}
                        
                     </div>
           );
