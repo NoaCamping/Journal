@@ -1,8 +1,5 @@
 import React from 'react';
-import axios from 'axios';
 import './TPboard.css';
-import TaskBoard from './TaskBoard';
-import PostBoard from './PostBoard';
 import {Link} from 'react-router-dom';
 
 
@@ -10,15 +7,8 @@ class TPboard extends React.Component {
     constructor(props){
         super(props);
 
-        this.state={"item": {}, "id": this.props.location.state.id};
+        this.state={"id": this.props.location.state.id};
     }
-
-    componentDidMount=async(props)=>{
-
-      await axios.get(`https://jsonplaceholder.typicode.com/users/${this.state.id}`)
-      .then(response=>this.setState({item: response.data}))
-      
-    };
     
     render(){
         return (

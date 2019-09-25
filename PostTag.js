@@ -18,6 +18,7 @@ class PostTag extends React.Component{
            <div id="pcard">
                <h2><u>Title: </u> &nbsp; {this.state.title}</h2>
                 <h2><u>Message: </u> &nbsp; {this.state.body}</h2>
+                {this.props.id}
                    
            </div>
            
