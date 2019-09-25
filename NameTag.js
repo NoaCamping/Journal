@@ -3,8 +3,6 @@ import  './NameTag.css';
 import {BrowserRouter as Router,Switch,Route,Link} from 'react-router-dom';
 import TPboard from './TPboard';
 
-
-
 class NameTag extends React.Component{
   
     constructor(props){
@@ -30,7 +28,7 @@ class NameTag extends React.Component{
                         
                     <button>
                             <Link to={{
-                                pathname:'/TPboard/${this.state.id}',
+                                pathname:`/TPboard/${this.state.id}`,
                                 state: {id: this.state.id
                                 }
                                 }} component={TPboard} >

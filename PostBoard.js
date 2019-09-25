@@ -13,7 +13,7 @@ class PostBoard extends React.Component {
     }
 
     componentDidMount=async()=>{
-      await axios.get('https://jsonplaceholder.typicode.com/posts/?userId={this.state.id}')
+      await axios.get(`https://jsonplaceholder.typicode.com/posts/?userId={this.state.id}`)
       .then(response=>{
           const posts=response.data;
           this.setState({myposts: posts});

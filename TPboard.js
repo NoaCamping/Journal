@@ -28,7 +28,7 @@ class TPboard extends React.Component {
                 <div id="switches">
                     <Switch>
                         <Link to={{
-                            pathname: '/PostBoard/${this.state.id}',
+                            pathname: `/PostBoard/${this.state.id}`,
                             state:{
                                 id: this.state.id,
                                 funny: true
@@ -41,7 +41,7 @@ class TPboard extends React.Component {
                     
                     <Switch>
                         <Link to={{
-                            pathname: '/TaskBoard/${this.state.id}',
+                            pathname: `/TaskBoard/${this.state.id}`,
                             state:{
                                 id: this.state.id
                             }
