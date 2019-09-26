@@ -4,11 +4,24 @@ h2{
 }
 .ncard{
     border: 2px solid black;
-    margin-left: 10em;
-    margin-right: 10em;
+    margin-left: 5em;
+    margin-right: 15em;
     margin-bottom: 2em;
     margin-top: 1em;
     background-color: lightskyblue;
+    text-align: center;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+.pic_list{
+    display: grid;
+    grid-template-columns: 10vh auto;
+}
+img{
+    height:50%;
+}
+.btn{
+    padding: 0.5em;
 }
 #more{
     padding: 1em;

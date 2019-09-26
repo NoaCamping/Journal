@@ -19,23 +19,27 @@ class NameTag extends React.Component{
 
     render(){        
         return(
-                    <div className="ncard">
+            <div className="pic_list">
+                <img src="https://cdn.pixabay.com/photo/2016/08/31/11/54/user-1633249__340.png" alt="client"/>
+                <div className="ncard">
                             <h2><u> Id number: </u> &nbsp; {this.state.id}</h2>
                             <h2><u>Name:  </u> &nbsp; {this.state.name}</h2>
                             <h2><u>Email:  </u> &nbsp; {this.state.email}</h2>
                         
-                        
+                        <button className="btn">
                             <Link  
                             to={{
                                 pathname:`/TPboard/${this.state.id}`,
-                                state: {id: this.state.id}
+                                state: {id: this.state.id, name: this.state.name}
                             }}
                             >
                                 Tasks Posts Board
                             </Link>  
-                        
+                        </button>
                    
                     </div>    
+            </div>
+                    
                 
             
            

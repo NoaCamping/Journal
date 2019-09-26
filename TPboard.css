@@ -1,17 +1,26 @@
 #board{
-    background-color:yellowgreen;
+    background-color:orange;
     border: 2px solid black;
 }
 div h2{
     text-align: center;
 }
+div h3{
+    text-align: center;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.8rem;
+    font-style: italic;
+    color: brown;
+    
+}
 #switches{
-    border: 5px solid greenyellow;
+    border: 5px solid black;
     border-radius: 20px;
     margin-left: 150px;
     margin-right: 150px;
     margin-bottom: 50px;
-    background-color: lightgreen;
+    background-color: blanchedalmond;
     padding: 20px;
     display: grid;
     grid-template-rows: 50% 50%;

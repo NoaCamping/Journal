@@ -9,11 +9,11 @@ class TaskBoard extends React.Component {
     constructor(props){
         super(props);
 
-        this.state={"id":  this.props.location.state.id, "mytasks": []};
+        this.state={"id":  this.props.location.state.id, "name": this.props.location.state.name,"mytasks": []};
     }
 
     componentDidMount(){
-      axios.get(`https://jsonplaceholder.typicode.com/todos/?userId={this.state.id}`)
+      axios.get(`https://jsonplaceholder.typicode.com/todos/?userId=${this.state.id}`)
       .then(response=>{
           const tasks=response.data;
           this.setState({mytasks: tasks});
@@ -24,17 +24,14 @@ class TaskBoard extends React.Component {
     render(){
         return (
             <div id="taskboard">
-              <h2>Tasks for client number {this.state.id}</h2>
-              <ul>
-              {this.state.mytasks.map((task,index)=>
-                    <li  key={index}>
-                      <TaskTag id={this.state.id} title={task.title} body={task.body}/>  
-                    </li>  
-                      )}
-              </ul>
-             
+              <h2>{this.state.name}'s tasks</h2>
               
-            </div>
+              {this.state.mytasks.map((task,index)=>
+                    <div  key={index}>
+                      <TaskTag id={this.state.id} title={task.title} finished={task.completed}/>  
+                    </div>  
+                      )}
+              </div>
           );
     }
   

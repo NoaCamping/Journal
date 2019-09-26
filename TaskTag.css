@@ -1,5 +1,5 @@
 h2{
-    text-align:left;
+    text-align:left !important;
     padding-left: 1em;
 }
 #tcard{
@@ -9,4 +9,6 @@ h2{
     margin-bottom: 2em;
     margin-top: 1em;
     background-color: lightgoldenrodyellow;
+    text-align: left !important;
+    
 }

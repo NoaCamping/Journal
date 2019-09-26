@@ -1,8 +1,9 @@
 body{
   background-color: rosybrown;
 }
-.App {
+.App{
   text-align: center;
+  margin: 3em;
 }
 h1{
   background-color: gold;
